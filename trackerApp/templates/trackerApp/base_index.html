@@ -1,0 +1,92 @@
+{% load static %}
+
+
+<!Doctype html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" type="text/css" href="{% static 'trackerApp/main.css/' %}">
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+     <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>COVID-19 TRACKER</title>
+  </head>
+  <body >
+   <div class="back">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse ">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}" style=" font-size: 20px">SARS Covid19 Django APP </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="font-size: 25px" style="font-weight: bold;">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}" style="color:white;">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'globals' %}" style="color:white;">Worldwide Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'data' %}" style="color:white;">Worldwide Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}" style="color:white;">Moroccan headlines</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+              Check Out More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="{% url 'news' %}" style="color:black;">Read Lates News</a>
+              <a class="dropdown-item" href="{% url 'top10' %}" style="color:black;">See Top-10 Infected Countries</a>
+              <a class="dropdown-item" href="{% url 'country_data' %}" style="color:black;">Search For Country's Live Data</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+</ul>
+
+</div>
+<br>
+</div>
+</nav>
+
+<div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          {% block scripts %}
+          {% endblock scripts %}
+
+          {% block content %}
+          {% endblock %}
+
+
+        </div>
+       
+      
+      </div>
+    </main> 
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

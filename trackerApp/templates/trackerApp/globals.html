@@ -1,0 +1,238 @@
+{% extends 'trackerApp/base_index.html' %}
+{% block content %}
+
+
+    <style>
+        .display-8 {
+            font-weight: 300;
+            font-size: 35px;
+        }
+
+        .color1 {
+            background-color: #2475B0;
+            color: white;
+        }
+
+        .color2 {
+            background-color: #FF3E4D;
+            color: white;
+        }
+
+        .color3 {
+            background-color: #B83227;
+            color: white;
+        }
+
+        .color4 {
+            background-color: #2ecc72;
+            color: white;
+        }
+
+        .color5 {
+            background-color: #26ae60;
+            color: white;
+        }
+    </style>
+    <style>
+        .display-8 {
+            font-weight: 300;
+            font-size: 35px;
+        }
+
+        .display-7 {
+            font-weight: 300;
+            font-size: 45px;
+        }
+
+        .color0 {
+            background-color: #2475B0;
+            color: white;
+        }
+        .color1 {
+            background-color: #06497a;
+            color: white;
+        }
+
+        .color2 {
+            background-color: #FF3E4D;
+            color: white;
+        }
+
+        .color3 {
+            background-color: #B83227;
+            color: white;
+        }
+
+        .color4 {
+            background-color: #2ecc72;
+            color: white;
+        }
+
+        .color5 {
+            background-color: #26ae60;
+            color: white;
+        }
+
+
+        .number {
+            font-weight: 200;
+            font-size: 30px;
+            float: center;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+
+    <br>
+    <h1 class="display-7" align="center">Covid 19 - Global Data Update</h1>
+    <h2 class="display-7" align="center">{% now "jS F Y H:i" %}</h2>
+    <hr>
+    <div class="container-fluid">
+        <div class="row" >
+            
+            <div class="card col m-2 color0">
+                <div class="card-body">
+                    <h4 class="card-title">New Confirmed</h4>
+                    <p class="card-text number">{{globalSummary.NewConfirmed}}</p>
+                </div>
+            </div>
+            
+            <div class="card col m-2 color2">
+                <div class="card-body">
+                    <h4 class="card-title">New Deaths</h4>
+                    <p class="card-text number">{{globalSummary.NewDeaths}}</p>
+                </div>
+            </div>
+            
+            <div class="card col m-2 color4">
+                <div class="card-body">
+                    <h4 class="card-title">New Recovered</h4>
+                    <p class="card-text number">{{globalSummary.NewRecovered}}</p>
+                </div>
+            </div>
+            
+
+        </div>
+        <hr>
+        <div class="row" >
+            
+            
+            <div class="card col m-2 color1">
+                <div class="card-body">
+                    <h4 class="card-title">Total Confirmed</h4>
+                    <p class="card-text number">{{globalSummary.TotalConfirmed}}</p>
+                </div>
+            </div>
+            
+            <div class="card col m-2 color3">
+                <div class="card-body">
+                    <h4 class="card-title">Total Deaths</h4>
+                    <p class="card-text number">{{globalSummary.TotalDeaths}}</p>
+                </div>
+            </div>
+            
+            <div class="card col m-2 color5">
+                <div class="card-body">
+                    <h4 class="card-title">Total Recovered</h4>
+                    <p class="card-text number">{{globalSummary.TotalRecovered}}</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <hr>
+        <h4 class="border rounded p-3">
+            <div class="display-8" style="color:white;">
+                Country Wise Summary
+            </div>
+        </h4>
+
+
+
+        <p align="right"><button class="btn btn-primary" onclick="sortTable()">Sort by Total Confirmed</button></p>
+
+
+        <table class="table" id="myTable">
+            <thead>
+                <tr style="color:white;">
+                    <th >Sno.</th>
+                    <th>Country</th>
+                    <th>New Confirmed</th>
+                    <th>Total Confirmed</th>
+                    <th>New Deaths</th>
+                    <th>Total Deaths</th>
+                    <th>New Recovered</th>
+                    <th>Total Recovered</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in countries %}
+                <tr style="color:white;">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.Country}}</td>
+                    <td>{{c.NewConfirmed}}</td>
+                    <td >{{c.TotalConfirmed}}</td>
+                    <td>{{c.NewDeaths}}</td>
+                    <td>{{c.TotalDeaths}}</td>
+                    <td>{{c.NewRecovered}}</td>
+                    <td>{{c.TotalRecovered}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+    </div>
+
+    <script>
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[3];
+      y = rows[i + 1].getElementsByTagName("TD")[3];
+      //check if the two rows should switch place:
+      if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+
+{% endblock %}
+
+

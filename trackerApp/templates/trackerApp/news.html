@@ -1,0 +1,75 @@
+{% extends 'trackerApp/base_index.html' %}
+
+{% block scripts %}
+
+
+{% endblock scripts %}
+{% block content %}
+
+<div class="con col-md-12 offset-md-3 text-center">
+  <h3 style="color:#3e95cd;">{{total}} Latest News On Covid-19 from All Over Morocco</h3>
+      {% for heads in page %}
+
+  <div style="text-align: center;">
+
+      <div class="card text-center" style="margin-top: 1px">
+          <div class="card-header">
+           <!-- Top Stories On Covid-19 -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{heads.0}}</h5>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <a href="{{heads.1}}" class="btn btn-primary" style="background-color: black;">Click Here To READ MORE</a>
+          </div>
+          <div class="card-footer text-muted">
+
+        </div>
+      </div>
+          {%endfor%}
+
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="panel panel-default">
+  <div class="panel-body">
+      <div class="row d-flex justify-content-center">
+    <nav aria-label="..." style="font-size: 30px; text-align: center; word-spacing: 20px;">
+  <div class="pagination">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <span class="step-links">
+        {% if page.has_previous %}
+            <a href="?page=1" style="color: white">&laquo; First_Page</a>
+            <a href="?page={{ page.previous_page_number }}" style="color: white">Previous|</a>
+        {% endif %}
+    </li>
+    <li>
+      <span class="current" style="color:white">
+            <h3>Page {{ page.number }} of {{ page.paginator.num_pages }}.</h3>
+      </span>
+        <span>
+
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}" style="color: white">Next_Page</a>
+            <a href="?page={{ page.paginator.num_pages }}" style="color: white">Last_Page &raquo;</a>
+        {% endif %}
+      </span>
+    </li>
+    </ul>
+  </div>
+  </nav>
+  </div>
+
+  </div>
+</div>
+  
+  
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

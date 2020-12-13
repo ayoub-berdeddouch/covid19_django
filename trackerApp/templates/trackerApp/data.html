@@ -1,0 +1,132 @@
+{% extends 'trackerApp/base_index.html' %}
+
+{% block scripts %}
+
+
+<script>
+	$(document).ready(function(){
+		var confirmed = "{{confirmed}}"
+		var recovered="{{recovered}}"
+		var death="{{deaths}}"
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+		    type: 'bar',
+		    
+		    data: {
+		        labels: ['Confirmed Cases', 'Recovered Cases ', 'Death Cases'],
+		        datasets: [
+			        {
+			            label: '# of Total Confirmed',
+			            data: [confirmed,0 , 0],
+			            backgroundColor: ["#3e95cd","#3cba9f", "#c45850"],
+			        
+			            // borderColor: ["#3e95cd"],
+			            // borderWidth: 1
+			        },
+			        
+			         {
+			            label: '# of Total Recovered',
+			            data: [0, recovered, 0],
+			            backgroundColor: ["#3e95cd","#3cba9f", "#c45850"],
+			        
+			            /*borderColor: [ "#3cba9f"],
+			            borderWidth: 1*/
+			        },
+
+			         {
+			            label: '# of Total Deaths',
+			            data: [ 0,0, death],
+			            backgroundColor: ["#3e95cd","#3cba9f", "#c45850"],
+			        
+			            /*borderColor: ["#c45850"],
+			            borderWidth: 1*/
+			        },
+
+		        ]
+		    },
+		    options: {
+		    	scales: {
+		            yAxes: [{
+		                ticks: {
+		                    beginAtZero: true
+		                }
+		            }]
+		        }
+		        
+		    }
+		});
+});
+
+</script>
+
+
+{% endblock scripts %}
+{% block content %}
+
+
+<div class="containe">
+		
+		<div class="row">
+			<div class="col-md-12 offset-md-3 text-center">
+	<!-- OVERALL DATA -->
+	
+			<div class="card col m-2 color1">
+                <div class="card-body">
+                    <h2 class="card-title">COVID-19 DATA FROM ACROSS THE WORLD</h2>
+                    <p class="card-text number" ><h6 >Metionted Below are the LIVE DATA, depicting the total number of cases from all over the world.</h6> </p>
+                </div>
+            </div>
+	
+		
+		<p style="margin-top:5px margin-bottom:10px"></p>
+
+		<!-- <div class="form-inline d-flex justify-content-around centre">
+			<a class="tag ">
+				<h3 class="mx-auto" style="width: 200px; margin-top: 20px">
+					<span style="color:blue;">{{confirmed}} <i class="fas fa-user-injured"></i></span> NEW CONFIRMED CASES</h3>
+			</a>
+
+
+			<a class="tag1">
+				<h3 class="mx-auto" style="width: 200px; margin-top: 20px">
+					<span style="color:green;">{{recovered}} <i class="fas fa-hospital-user"></i></span> RECOVERED PATIENTS </h3>
+				</a>
+			<a class="tag2">
+				<h3 class="mx-auto" style="width: 200px; margin-top: 20px">
+				<span style="color:red;"> {{deaths}} <i class="fas fa-skull-crossbones"></i></span> DEATHS  </h3>
+			</a>
+		</div>
+ -->
+
+		<div class="row">
+            <div class="card col m-2 color1">
+                <div class="card-body">
+                    <h4 class="card-title" style="color:blue;">NEW CONFIRMED CASES</h4>
+                    <p class="card-text number" ><h2 style="color:blue;">{{confirmed}}</h2> <i class="fas fa-user-injured" style="color:blue;"></i></p>
+                </div>
+            </div>
+            <div class="card col m-2 color2">
+                <div class="card-body">
+                    <h4 class="card-title" style="color:green;">RECOVERED PATIENTS</h4>
+                    <p class="card-text number" ><h2 style="color:green;"> {{recovered}}</h2> <i class="fas fa-hospital-user" style="color:green;"></i></p>
+                </div>
+            </div>
+            <div class="card col m-2 color3">
+                <div class="card-body">
+                    <h4 class="card-title" style="color:red;">Total DEATHS</h4>
+                    <p class="card-text number" > <h2 style="color:red;"> {{deaths}}</h2> <i class="fas fa-skull-crossbones " style="color:red;"></i></p>
+                </div>
+            </div>
+            
+        </div>
+</div></div></div>
+	<div class="containe col-md-12 offset-md-3 text-center" style="text-align: center;">
+		<h3>VISUALIZING THE STATS</h3>
+		<div class="block"   style="background-color: rgb(250, 250, 250);">
+		<canvas id="myChart" width="500" height="200" style="margin-right:200px; align-items: center;"></canvas></div>
+	</div>
+
+
+
+
+{% endblock %}

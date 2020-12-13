@@ -1,0 +1,158 @@
+{% load static %}
+
+<!doctype html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+       <link rel="stylesheet" type="text/css" href="{% static 'trackerApp/main.css/' %}">
+       <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <title>COVID-19 TRACKER</title>
+  </head>
+  <body >
+  <div class="back">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse ">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}" style=" font-size: 20px">SARS Covid19 Django APP </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" style="font-size: 25px">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}" style="color:white;">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'globals' %}" style="color:white;">Worldwide Chart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'data' %}" style="color:white;">Worldwide Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}" style="color:white;">Moroccan headlines</a>
+          </li>
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+              Check Out More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'news' %}">Read Lates News</a>
+              <a class="dropdown-item" href="{% url 'top10' %}">See Top-10 Infected Countries</a>
+              <a class="dropdown-item" href="{% url 'country_data' %}">Search For Country's Live Data</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+        </ul>
+
+</div>
+<br>
+</div>
+</nav>
+    
+
+    
+
+
+    <div >
+      <div class="container ">
+        <h2 class="text-center align-middle">COVID-19 TRACKER </h2>
+        <p class="text-justify text-center">Get Live Data and Latest News on COVID19 right here</p>
+        <h2 class="display-7" align="center">{% now "jS F Y H:i" %}</h2>
+      </div>
+    </div>
+
+    <div class="con" style="margin-top:10px">  
+      <div class="row d-flex justify-content-around">
+        
+        <div class="card col m-2 color2"> 
+          
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold;">Get Global Covid-19 Cases</h5>
+              <p1 class="card-text">This Page Contains the total number of COVID19 cases from all over the world</p1><br>
+              <a href="{% url 'data' %}" class="btn btn-primary" style="background-color: #3e95cd;">Get Live Data</a>
+            </div>
+        </div>
+  
+        <div class="card col m-2 color1"> 
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold;">Latest News</h5>
+              <p1 class="card-text">Read the latest news in Morocco on COVID-19</p1><br><br>
+              <a href="{% url 'news' %}" class="btn btn-primary" style="background-color: #3e95cd;">Read Now</a>
+            </div>
+        </div>
+        
+      </div>
+      <div class="row d-flex justify-content-around">
+
+        <div class="card col m-2 color1"> 
+          
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold;">Get Live Covid-19 Status</h5>
+              <p1 class="card-text">Get the live status on any country you want.</p1><br><br>
+              <a href="{% url 'country_data' %}" class="btn btn-primary" style="background-color: #3e95cd;">Search Out</a>
+            </div>
+        </div>
+
+
+        <div class="card col m-2 color1"> 
+          
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold;">Covid-19 World Chart</h5>
+              <p1 class="card-text">Get new update on a chart of World Countries</p1><br><br>
+              <a href="{% url 'globals' %}" class="btn btn-primary" style="background-color: #3e95cd;">Search Out</a>
+            </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+       
+      
+      </div>
+    </main> 
+<!-- Footer -->
+<div class="bottom">
+
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <!-- <div class="container-fluid text-center text-md-left"> -->
+
+  <div class="footer-copyright text-center py-3" style="color: white;">© 2020 Copyright:
+    <a href="http://ayoub-berdeddouch.github.io">Ayoub Berdeddouch</a>
+  </div>
+</footer>
+
+<!-- Footer -->
+    <!-- Optional JavaScript
+    <!- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      console.log($)
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
