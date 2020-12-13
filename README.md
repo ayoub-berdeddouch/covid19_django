@@ -33,14 +33,18 @@ Its also an app to put into reality what I've learned about DJANGO....
 
 **Ayoub Berdeddouch**
 
-* [LinkedIn Profile](https://www.linkedin.com/in/ayoub-berdeddouch/)
-[![Ayoub BERDEDDOUCH](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayoub-berdeddouch/)
+* [![Ayoub BERDEDDOUCH](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayoub-berdeddouch/)
 
 ### License
 
-MIT License: http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/ayoub-berdeddouch/covid19_django/blob/main/LICENSE).
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ayoub-berdeddouch/covid19_django/blob/main/LICENSE)
 
-#### Copyright © 2020, [Ayoub Berdeddouch](https://github.com/ayoub-berdeddouch)
+#### Copyright © 2020, [![Ayoub Berdeddouch](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ayoub-berdeddouch)
 
+## Skills
 
+[![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
+[![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
+[![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
+[![](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)]()
+[![](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)]()
