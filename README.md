@@ -4,7 +4,7 @@ SARS Covid-19 APP, a website developed using Django(Python) Framework, is an app
 
 Its also an app to put into reality what I've learned about DJANGO.... 
 
-Visit the site at ![Coming Soon]()
+.....
 
 ## What it does?
 
@@ -34,11 +34,12 @@ Visit the site at ![Coming Soon]()
 **Ayoub Berdeddouch**
 
 * [LinkedIn Profile](https://www.linkedin.com/in/ayoub-berdeddouch/)
-
+[![Ayoub BERDEDDOUCH](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayoub-berdeddouch/)
 
 ### License
 
 MIT License: http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/ayoub-berdeddouch/covid19_django/blob/main/LICENSE).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ayoub-berdeddouch/covid19_django/blob/main/LICENSE)
 
 #### Copyright © 2020, [Ayoub Berdeddouch](https://github.com/ayoub-berdeddouch)
 
