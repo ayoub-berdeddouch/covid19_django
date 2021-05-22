@@ -31,10 +31,12 @@ Its also an app to put into reality what I've learned about DJANGO....
 
 ### Screenshots 
 
-![]()
-![]()
-![]()
-![]()
+![](sars.PNG)
+![](news.PNG)
+![](data.PNG)
+![](globals.PNG)
+![](country_ma.PNG)
+![](top10.PNG)
 
 
 ## Author
