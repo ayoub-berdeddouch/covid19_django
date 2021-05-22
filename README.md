@@ -29,6 +29,14 @@ Its also an app to put into reality what I've learned about DJANGO....
 
 #### COVID19 Api - https://api.covid19api.com/summary 
 
+### Screenshots 
+
+![]()
+![]()
+![]()
+![]()
+
+
 ## Author
 
 **Ayoub Berdeddouch**
